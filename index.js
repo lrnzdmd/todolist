@@ -20,11 +20,40 @@ function checkForLocalStorage() {
         }
 }
 
+class User {
+    constructor (name = "Username", projectList = []) {
+        this.name = name;
+        this.projectList = projectList.length ? projectList : [new Project()];
+        this.maxLengthName = 20;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    setName(value) {
+        value < this.maxLengthName ? this.name = value : this.name = value.slice(0, this.maxLengthName);
+    }
+
+    addProject(value) {
+        this.projectList.push(new Project(value.title, value.description, value.taskList))
+    }
+
+    removeProject(value) {
+        const index = this.projectList.findIndex(proj => proj.title === value.title);
+        this.taskList.splice(index, 1);
+    }
+
+    getProjectList() {
+        return this.projectList;
+    }
+}
+
 class Project {
-    constructor (title = "My Example Project", description = "Short Project Description", taskList = [new Task()]) {
+    constructor (title = "My Example Project", description = "Short Project Description", taskList = []) {
         this.title = title;
         this.description = description;
-        this.taskList = taskList;
+        this.taskList = taskList.length ? taskList : [new Task()];
         this.maxLengthTitle = 15;
         this.maxLengthDescription = 30;
     }
@@ -56,15 +85,14 @@ class Project {
 }
 
 class Task {
-    constructor (title = "Example task..", description = "Short description", dueDate = null, priority = 1, noteList = ["Notes about the task"]) {
+    constructor (title = "Example task..", description = "Short description", dueDate = null, priority = 1, noteList = []) {
         this.isDone = false;
-        this.dueDate = new Date(dueDate);
+        this.dueDate = dueDate;
         this.priority = priority;
-        this.isChecklist = false;
 
         this.title = title;
         this.description = description;
-        this.noteList = noteList;
+        this.noteList = noteList.length ? noteList : ["Notes about the task"];
         this.maxLengthTitle = 25;
         this.maxLengthDescription = 50; 
     }
@@ -102,6 +130,10 @@ class Task {
         this.priority = value;
     }
 
+    checkDone() {
+        this.isDone = !this.isDone;
+    }
+
     addNote(value = "") {
         this.noteList.push({ item: value, checked: false });
     }
@@ -115,4 +147,3 @@ class Task {
         return this.noteList;
     }
 }
-
