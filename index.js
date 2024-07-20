@@ -20,15 +20,51 @@ function checkForLocalStorage() {
         }
 }
 
-class Task {
-    constructor (title, description, dueDate, priority, defaultitem) {
-        this.isDone = false;
+class Project {
+    constructor (title = "My Example Project", description = "Short Project Description", taskList = [new Task()]) {
         this.title = title;
         this.description = description;
+        this.taskList = taskList;
+        this.maxLengthTitle = 15;
+        this.maxLengthDescription = 30;
+    }
+
+    getTitle() {
+        return this.title;
+    }
+    
+    setTitle(value) {
+        value.length <= this.maxLengthTitle ? this.title = value : this.title = value.slice(0, this.maxLengthTitle); 
+    }
+
+    getDescription() {
+        return this.description;
+    }
+    
+    setDescription(value) {
+        value.length <= this.maxLengthDescription ? this.description = value : this.description = value.slice(0, this.maxLengthDescription); 
+    }
+
+    addTask(value) {
+        this.taskList.push(new Task(value.title, value.description, value.dueDate, value.priority, value.noteList));
+    }
+
+    removeTask(value) {
+        const index = this.taskList.findIndex(task => task.title === value.title);
+        this.taskList.splice(index, 1);
+    }
+}
+
+class Task {
+    constructor (title = "Example task..", description = "Short description", dueDate = null, priority = 1, noteList = ["Notes about the task"]) {
+        this.isDone = false;
         this.dueDate = new Date(dueDate);
         this.priority = priority;
         this.isChecklist = false;
-        this.list = [{item:defaultitem, checked:false}];
+
+        this.title = title;
+        this.description = description;
+        this.noteList = noteList;
         this.maxLengthTitle = 25;
         this.maxLengthDescription = 50; 
     }
@@ -66,27 +102,17 @@ class Task {
         this.priority = value;
     }
 
-    // Titles explain these methods and they do not need a comment...
-    // but let's separate the getsetters from the "good stuff"
-
-    toggleIsCheckList() {
-        this.isChecklist = !this.isChecklist;
+    addNote(value = "") {
+        this.noteList.push({ item: value, checked: false });
     }
 
-    addToList(value) {
-        this.list.push({ item: value, checked: false });
+    removeNote(value) {
+        const index = this.noteList.findIndex(itm => itm === value);
+        this.noteList.splice(index, 1);
     }
 
-    removeFromList(value) {
-        const index = this.list.findIndex(itm => itm.item === value.item);
-        this.list.splice(index, 1);
-    }
-
-    // Not sure if a getlist can be much better than just accessing 
-    // object.list but since i made getters/setters for everything else...
-
-    getItemList() {
-        return this.list;
+    getNoteList() {
+        return this.noteList;
     }
 }
 
