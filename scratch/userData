@@ -1,0 +1,1 @@
+{"name":"lorenzo","projectList":[{"title":"My Example Project","description":"Short Project Description","taskList":[{"isComplete":false,"dueDate":null,"priority":1,"title":"Example task..","description":"Short description","noteList":["Notes about the task"],"maxLengthTitle":25,"maxLengthDescription":50}],"maxLengthTitle":15,"maxLengthDescription":30}],"maxLengthName":20}

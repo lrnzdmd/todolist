@@ -2,6 +2,12 @@
 // it's own module, but i was reading about localstorage and thought i could
 // get started with setting it up.
 
+// UPDATE: node is the best, localstorage is here atm for testing and testing was good,
+// can load and save from and to localstorage! now, should all this stuff be its own "storage" module?
+
+const { LocalStorage } = require("node-localstorage");
+const localStorage = new LocalStorage("./scratch");
+
 function checkForLocalStorage() {
     let storage;
     try {
