@@ -4,8 +4,9 @@
 
 // UPDATE: node is the best, localstorage is here atm for testing and testing was good,
 // can load and save from and to localstorage! now, should all this stuff be its own "storage" module?
-
+const { format } = require("date-fns");
 const { LocalStorage } = require("node-localstorage");
+
 const localStorage = new LocalStorage("./scratch");
 
 function checkForLocalStorage() {
@@ -112,6 +113,17 @@ class Project {
 
     clearCompleteTasks() {
         this.taskList = this.taskList.filter(task => !task.isComplete);
+    }
+
+    getTasksDueToday() {
+        const tasksDueToday = [];
+        this.taskList.forEach(task => {
+                if (format(new Date(), "yyyy-mm-dd") === format(task.dueDate, "yyyy-mm-dd")) {
+                    tasksDueToday.push(task);
+                }
+            });
+            
+        return tasksDueToday;
     }
 }
 
