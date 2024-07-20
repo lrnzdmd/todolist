@@ -20,6 +20,27 @@ function checkForLocalStorage() {
         }
 }
 
+function saveUserData(userobject) {
+    const userJSON = JSON.stringify(userobject);
+    localStorage.setItem("userData", userJSON);
+}
+
+function loadUserData() {
+
+    const userData = JSON.parse(localStorage.getItem("userData"));
+
+    const revivedProjectList = [];
+
+    for (let i = 0; i < userData.projectList.length; i++) {
+        const revivedTaskList = [];
+        userData.projectList[i].taskList.forEach(tsk => revivedTaskList.push(new Task(tsk.title, tsk.description, tsk.dueDate, tsk.priority, tsk.noteList)));
+        revivedProjectList.push(new Project(userData.projectList[i].title, userData.projectList[i].description, revivedTaskList));
+    }
+
+    return new User(userData.name, revivedProjectList);
+
+}
+
 class User {
     constructor (name = "Username", projectList = []) {
         this.name = name;
@@ -82,11 +103,15 @@ class Project {
         const index = this.taskList.findIndex(task => task.title === value.title);
         this.taskList.splice(index, 1);
     }
+
+    clearCompleteTasks() {
+        this.taskList = this.taskList.filter(task => !task.isComplete);
+    }
 }
 
 class Task {
     constructor (title = "Example task..", description = "Short description", dueDate = null, priority = 1, noteList = []) {
-        this.isDone = false;
+        this.isComplete = false;
         this.dueDate = dueDate;
         this.priority = priority;
 
@@ -130,12 +155,12 @@ class Task {
         this.priority = value;
     }
 
-    checkDone() {
-        this.isDone = !this.isDone;
+    checkComplete() {
+        this.isComplete = !this.isComplete;
     }
 
     addNote(value = "") {
-        this.noteList.push({ item: value, checked: false });
+        this.noteList.push(value);
     }
 
     removeNote(value) {
