@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>To Do List</title>
 </head>
 <body>
     <div class="logo" id="homebtn">
-        <img src="./images/birdlistlogo.webp" alt="HomeLogo">
-        <p>BirdList</p>
     </div>
     <div class="header">
         <div class="projname">
@@ -18,51 +15,49 @@
         </div>
         <div class="tasksduetoday">
             <p>Hello, <b id="username">User</b></p>
-            <p><b id="tasksduetoday">11</b> Tasks due today!</p>
+            <p id="duetodaybtn"><b id="tasksduetoday">11</b> Tasks due today!</p>
         </div>
     </div>
     <div class="sidebar">
-        <p><b>PROJECTS</b></p>
-        <p id="addprojectbtn">New Project</p>
-        
+        <p id="addprojectbtn"><b>New Project</b></p>   
         <div class="projects" id="projectslist">
-            <p>Example Project</p>
+            
         </div>
         <div class="settings" id="settingsbtn">
             <p>SETTINGS</p>
         </div>
     </div>
-    <div class="content">
+    <div class="content" id="content">
         <div id="taskslist">
-            <div class="taskmaxi">
-                <div style="display: flex; gap:1rem;">
-                    <div class="check"></div>
-                    <div class="taskname">
-                        <p><b>Example Task</b></p>
-                        <p>Short Task Description...</p>
-                    </div>
-            </div>
-                <div class="priorityduedate">
-                    <p>Priority: <b>high!</b></p>
-                    <p>Due: <b>15/01/1990</b></p>
-                </div>
-                </div>
-            </div>
-            <div class="taskmini">
-                <div style="display: flex; gap:1rem;">
-                    <div class="check"></div>
-                    <div class="taskname">
-                        <p><b>Example Task</b></p>
-                        <p>Short Task Description...</p>
-                    </div>
-                </div>
-                <div class="priorityduedate">
-                    <p>Priority: <b>high!</b></p>
-                    <p>Due: <b>15/01/1990</b></p>
-                </div>
-            </div>
-        <div id="addtaskbtn"><p>+</p></div>
+            
+            <div id="addtaskbtn"><p>+</p></div>
+        </div>
     </div>
-    </div>
+    <dialog id="removeconfirmation">
+        
+    </dialog>
+    <template id="taskcardtemplate">
+        <div class="task">
+            <div class="flexcontainer">
+            <div style="display: flex; gap:1rem;">
+                <div class="check"></div>
+                <div class="taskname">
+                    <p><b></b></p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="priorityduedate">
+                <p>Priority: <b>/b></p>
+                <p>Due: <b></b></p>
+            </div>
+            </div>
+            <div class="expandedtask">
+                <div id="notelist"></div>
+                <div class="editremove">
+                    
+                </div>      
+            </div>
+        </div>
+    </template>
 </body>
 </html>

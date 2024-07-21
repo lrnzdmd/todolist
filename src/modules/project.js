@@ -35,6 +35,10 @@ export default class Project {
         this.taskList.splice(index, 1);
     }
 
+    getTaskList() {
+        return this.taskList;
+    }
+
     clearCompleteTasks() {
         this.taskList = this.taskList.filter(task => !task.isComplete);
     }

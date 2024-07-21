@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do List</title>
 <script defer src="bundle.js"></script></head>
 <body>
-    
+    <div class="logo" id="homebtn">
+    </div>
+    <div class="header">
+        <div class="projname">
+            <h2 id="hprojectname">Home</h2>
+            <p id="hprojectdescr">Let's get to it!</p>
+        </div>
+        <div class="tasksduetoday">
+            <p>Hello, <b id="username">User</b></p>
+            <p id="duetodaybtn"><b id="tasksduetoday">11</b> Tasks due today!</p>
+        </div>
+    </div>
+    <div class="sidebar">
+        <p id="addprojectbtn"><b>New Project</b></p>   
+        <div class="projects" id="projectslist">
+            
+        </div>
+        <div class="settings" id="settingsbtn">
+            <p>SETTINGS</p>
+        </div>
+    </div>
+    <div class="content" id="content">
+        <div id="taskslist">
+            
+            <div id="addtaskbtn"><p>+</p></div>
+        </div>
+    </div>
+    <dialog id="removeconfirmation">
+        
+    </dialog>
+    <template id="taskcardtemplate">
+        <div class="task">
+            <div class="flexcontainer">
+            <div style="display: flex; gap:1rem;">
+                <div class="check"></div>
+                <div class="taskname">
+                    <p><b></b></p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="priorityduedate">
+                <p>Priority: <b>/b></p>
+                <p>Due: <b></b></p>
+            </div>
+            </div>
+            <div class="expandedtask">
+                <div id="notelist"></div>
+                <div class="editremove">
+                    
+                </div>      
+            </div>
+        </div>
+    </template>
 </body>
 </html>

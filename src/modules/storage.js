@@ -20,9 +20,14 @@ function checkForLocalStorage() {
         }
 }
 
-function saveUserData(userobject) {
-    const userJSON = JSON.stringify(userobject);
-    localStorage.setItem("userData", userJSON);
+function saveUserDataListener(user) {
+  if (checkForLocalStorage()) {
+    const userJSON = JSON.stringify(user);
+  
+    window.addEventListener("beforeunload", function () {
+        localStorage.setItem("userData", userJSON);
+    });
+  }
 }
 
 function loadUserData() {
@@ -54,4 +59,4 @@ function reviveData() {
 
 }
 
-export { checkForLocalStorage, saveUserData, loadUserData };
+export { checkForLocalStorage, saveUserDataListener, loadUserData };

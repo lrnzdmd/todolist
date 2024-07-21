@@ -5,6 +5,8 @@ export default class User {
         this.name = name;
         this.projectList = projectList.length ? projectList : [new Project()];
         this.maxLengthName = 20;
+
+        this.getProjectList = this.getProjectList.bind(this);
     }
 
     getName() {
@@ -26,5 +28,15 @@ export default class User {
 
     getProjectList() {
         return this.projectList;
+    }
+
+    getAllTasks() {
+        const allTasks = [];
+        this.projectList.forEach(project => {
+            project.getTaskList().forEach(task => {
+                allTasks.push(task);
+            });
+        });
+        return allTasks;
     }
 }

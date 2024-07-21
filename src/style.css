@@ -19,7 +19,7 @@ body {
     grid-template-areas: "logo header" 
                         "sidebar content";
     background-color: slategrey;
-    color:aliceblue
+    color:aliceblue;
 }
 
 .logo {
@@ -69,6 +69,11 @@ body {
     justify-content: space-between;
 }
 
+.projectbox {
+    display: flex;
+    gap:0.2rem;
+}
+
 .tasksduetoday {
     
     display: flex;
@@ -91,28 +96,39 @@ body {
     font-size: 20px;
 }
 
-.sidebar p {
-    padding:0.1rem 2rem 0.1rem 2rem;
-    border-radius: 10px;
-    background-color: azure;
-    color:black;
-    cursor: pointer;
-    font-weight: 600;
-}
-
 .projects {
     display: flex;
     flex-direction: column;
     gap:0.5rem;
 }
 
-.projects p, #addproject{
+.projectbox p, #addprojectbtn, #settingsbtn{
     padding:0.1rem 1rem 0.1rem 1rem;
     border-radius: 10px;
     background-color: azure;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
+    color:black;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.377);
+}
+
+.removebtn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 26px;
+    height:26px;
+    border-radius: 50%;
+    background-color: azure;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.377);
+    align-self: center;
+}
+.removebtn img {
+    width:75%;
+    transform: translate(-1px, -1px);
 }
 
 .settings {
@@ -130,13 +146,15 @@ body {
 #taskslist {
     display:flex;
     flex-direction: column;
-    background-color: aliceblue;
+    gap:0.5rem;
+    background-color: hsl(208, 100%, 97%);
     border-radius: 10px 0px 0px 0px;
     height:100%;
     width:100%;
 }
 
 #addtaskbtn {
+    cursor: pointer;
     align-self: center;
     display: flex;
     justify-content: center;
@@ -144,6 +162,7 @@ body {
     height: 3rem;
     border-radius: 50%;
     background-color: dodgerblue;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.377);
 }
 
 #addtaskbtn p {
@@ -153,6 +172,7 @@ body {
     
 }
 .check {
+    cursor: pointer;
     align-self: center;
     width:1.4rem;
     height:1.4rem;
@@ -161,22 +181,38 @@ body {
     border:2px solid azure;
 }
 
-.taskmini {
+.task {
     justify-content: space-between;
     gap:1rem;
     display:flex;
-    border-radius: 10px;
-    padding:1rem;
-    margin:0.5rem;
-    background-color: dodgerblue;
-}
-
-.taskmaxi {
-    justify-content: space-between;
-    gap:1rem;
-    display:flex;
+    flex-direction: column;
     border-radius: 10px;
     padding:1rem;
     margin:0.5rem 0.5rem 0rem 0.5rem;
     background-color: dodgerblue;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.377);
+}
+
+.flexcontainer {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.expandedtask {
+    display: flex;
+    flex-direction: column;
+}
+
+.expandedtask img {
+    width:1.5rem;
+    cursor: pointer;
+}
+
+#notelist {
+    margin-left: 2.5rem;
+}
+
+.editremove {
+    align-self: flex-end;
 }

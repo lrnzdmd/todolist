@@ -10,13 +10,123 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
+/*!*************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
+  \*************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);\n// Imports\n\n\n\nvar ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./fonts/CartooNature.ttf */ \"./src/fonts/CartooNature.ttf\"), __webpack_require__.b);\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `@font-face {\n    font-family: \"CartooNature\";\n    src: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format(\"truetype\");\n    font-weight: normal;\n    font-size: normal;\n}\n\nbody {\n    overflow: hidden;\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n    width:100vw;\n    height: 100vh;\n    box-sizing: border-box;\n    margin:0;\n    padding:0;\n    display: grid;\n    grid-template-columns: 15vw 85vw;\n    grid-template-rows: 20vh 80vh;\n    grid-template-areas: \"logo header\" \n                        \"sidebar content\";\n    background-color: slategrey;\n    color:aliceblue;\n}\n\n.logo {\n    cursor: pointer;\n    background-color: dodgerblue;\n    grid-area: logo;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    padding-top: 2rem;\n    padding-bottom: 1rem;\n    border-top-left-radius: 10px;\n}\n\n.logo img {\n    height: 80%;\n}\n\n.logo p {\n    margin: 0;\n    font-family: \"CartooNature\";\n    font-size: 34px;\n    color: white;\n    font-style: oblique;\n    text-shadow:\n        1px 1px 0 black,\n        -1px -1px 0 black,\n        1px -1px 0 black,\n        -1px 1px 0 black;\n    \n}\n.header {\n    background-color: dodgerblue;\n    grid-area: header;\n    display: flex;\n    padding:1rem;\n    justify-content: space-between;\n}\n.header h2 , p {\n    margin:0;\n}\n\n.projname {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n\n.projectbox {\n    display: flex;\n    gap:0.2rem;\n}\n\n.tasksduetoday {\n    \n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    align-items: flex-end;\n}\n.tasksduetoday :nth-child(2) {\n    cursor: pointer;\n}\n\n.sidebar {\n    background-color: dodgerblue;\n    grid-area: sidebar;\n    padding: 1rem;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 2rem;\n    font-size: 20px;\n}\n\n.projects {\n    display: flex;\n    flex-direction: column;\n    gap:0.5rem;\n}\n\n.projectbox p, #addprojectbtn, #settingsbtn{\n    padding:0.1rem 1rem 0.1rem 1rem;\n    border-radius: 10px;\n    background-color: azure;\n    cursor: pointer;\n    font-size: 16px;\n    font-weight: 600;\n    color:black;\n    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.377);\n}\n\n.removebtn {\n    cursor: pointer;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-shrink: 0;\n    width: 26px;\n    height:26px;\n    border-radius: 50%;\n    background-color: azure;\n    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.377);\n    align-self: center;\n}\n.removebtn img {\n    width:75%;\n    transform: translate(-1px, -1px);\n}\n\n.settings {\n    cursor: pointer;\n}\n\n\n.content {\n    background-color:dodgerblue;\n    grid-area: content;\n    display: flex;\n    flex-direction: column;  \n}\n\n#taskslist {\n    display:flex;\n    flex-direction: column;\n    gap:0.5rem;\n    background-color: hsl(208, 100%, 97%);\n    border-radius: 10px 0px 0px 0px;\n    height:100%;\n    width:100%;\n}\n\n#addtaskbtn {\n    cursor: pointer;\n    align-self: center;\n    display: flex;\n    justify-content: center;\n    width:3rem;\n    height: 3rem;\n    border-radius: 50%;\n    background-color: dodgerblue;\n    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.377);\n}\n\n#addtaskbtn p {\n    font-size: 3rem;\n    transform: translateY(-13px);\n    \n    \n}\n.check {\n    cursor: pointer;\n    align-self: center;\n    width:1.4rem;\n    height:1.4rem;\n    background-color: rgb(19, 73, 126);\n    border-radius: 50%;\n    border:2px solid azure;\n}\n\n.task {\n    justify-content: space-between;\n    gap:1rem;\n    display:flex;\n    flex-direction: column;\n    border-radius: 10px;\n    padding:1rem;\n    margin:0.5rem 0.5rem 0rem 0.5rem;\n    background-color: dodgerblue;\n    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.377);\n}\n\n.flexcontainer {\n    width:100%;\n    display: flex;\n    justify-content: space-between;\n}\n\n.expandedtask {\n    display: flex;\n    flex-direction: column;\n}\n\n.expandedtask img {\n    width:1.5rem;\n    cursor: pointer;\n}\n\n#notelist {\n    margin-left: 2.5rem;\n}\n\n.editremove {\n    align-self: flex-end;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://todolist/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\nmodule.exports = function (cssWithMappingToString) {\n  var list = [];\n\n  // return the list of modules as css string\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = \"\";\n      var needLayer = typeof item[5] !== \"undefined\";\n      if (item[4]) {\n        content += \"@supports (\".concat(item[4], \") {\");\n      }\n      if (item[2]) {\n        content += \"@media \".concat(item[2], \" {\");\n      }\n      if (needLayer) {\n        content += \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\");\n      }\n      content += cssWithMappingToString(item);\n      if (needLayer) {\n        content += \"}\";\n      }\n      if (item[2]) {\n        content += \"}\";\n      }\n      if (item[4]) {\n        content += \"}\";\n      }\n      return content;\n    }).join(\"\");\n  };\n\n  // import a list of modules into the list\n  list.i = function i(modules, media, dedupe, supports, layer) {\n    if (typeof modules === \"string\") {\n      modules = [[null, modules, undefined]];\n    }\n    var alreadyImportedModules = {};\n    if (dedupe) {\n      for (var k = 0; k < this.length; k++) {\n        var id = this[k][0];\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n    for (var _k = 0; _k < modules.length; _k++) {\n      var item = [].concat(modules[_k]);\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        continue;\n      }\n      if (typeof layer !== \"undefined\") {\n        if (typeof item[5] === \"undefined\") {\n          item[5] = layer;\n        } else {\n          item[1] = \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\").concat(item[1], \"}\");\n          item[5] = layer;\n        }\n      }\n      if (media) {\n        if (!item[2]) {\n          item[2] = media;\n        } else {\n          item[1] = \"@media \".concat(item[2], \" {\").concat(item[1], \"}\");\n          item[2] = media;\n        }\n      }\n      if (supports) {\n        if (!item[4]) {\n          item[4] = \"\".concat(supports);\n        } else {\n          item[1] = \"@supports (\".concat(item[4], \") {\").concat(item[1], \"}\");\n          item[4] = supports;\n        }\n      }\n      list.push(item);\n    }\n  };\n  return list;\n};\n\n//# sourceURL=webpack://todolist/./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    options = {};\n  }\n  if (!url) {\n    return url;\n  }\n  url = String(url.__esModule ? url.default : url);\n\n  // If url is already wrapped in quotes, remove them\n  if (/^['\"].*['\"]$/.test(url)) {\n    url = url.slice(1, -1);\n  }\n  if (options.hash) {\n    url += options.hash;\n  }\n\n  // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n  if (/[\"'() \\t\\n]|(%20)/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, \"\\\\n\"), \"\\\"\");\n  }\n  return url;\n};\n\n//# sourceURL=webpack://todolist/./node_modules/css-loader/dist/runtime/getUrl.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/noSourceMaps.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/noSourceMaps.js ***!
+  \**************************************************************/
+/***/ ((module) => {
+
+eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=webpack://todolist/./node_modules/css-loader/dist/runtime/noSourceMaps.js?");
+
+/***/ }),
+
+/***/ "./src/style.css":
+/*!***********************!*\
+  !*** ./src/style.css ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleDomAPI.js */ \"./node_modules/style-loader/dist/runtime/styleDomAPI.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertBySelector.js */ \"./node_modules/style-loader/dist/runtime/insertBySelector.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ \"./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertStyleElement.js */ \"./node_modules/style-loader/dist/runtime/insertStyleElement.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */ \"./node_modules/style-loader/dist/runtime/styleTagTransform.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!./style.css */ \"./node_modules/css-loader/dist/cjs.js!./src/style.css\");\n\n      \n      \n      \n      \n      \n      \n      \n      \n      \n\nvar options = {};\n\noptions.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());\noptions.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());\noptions.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, \"head\");\noptions.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());\noptions.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"], options);\n\n\n\n\n       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"] && _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"].locals ? _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"].locals : undefined);\n\n\n//# sourceURL=webpack://todolist/./src/style.css?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/***/ ((module) => {
+
+eval("\n\nvar stylesInDOM = [];\nfunction getIndexByIdentifier(identifier) {\n  var result = -1;\n  for (var i = 0; i < stylesInDOM.length; i++) {\n    if (stylesInDOM[i].identifier === identifier) {\n      result = i;\n      break;\n    }\n  }\n  return result;\n}\nfunction modulesToDom(list, options) {\n  var idCountMap = {};\n  var identifiers = [];\n  for (var i = 0; i < list.length; i++) {\n    var item = list[i];\n    var id = options.base ? item[0] + options.base : item[0];\n    var count = idCountMap[id] || 0;\n    var identifier = \"\".concat(id, \" \").concat(count);\n    idCountMap[id] = count + 1;\n    var indexByIdentifier = getIndexByIdentifier(identifier);\n    var obj = {\n      css: item[1],\n      media: item[2],\n      sourceMap: item[3],\n      supports: item[4],\n      layer: item[5]\n    };\n    if (indexByIdentifier !== -1) {\n      stylesInDOM[indexByIdentifier].references++;\n      stylesInDOM[indexByIdentifier].updater(obj);\n    } else {\n      var updater = addElementStyle(obj, options);\n      options.byIndex = i;\n      stylesInDOM.splice(i, 0, {\n        identifier: identifier,\n        updater: updater,\n        references: 1\n      });\n    }\n    identifiers.push(identifier);\n  }\n  return identifiers;\n}\nfunction addElementStyle(obj, options) {\n  var api = options.domAPI(options);\n  api.update(obj);\n  var updater = function updater(newObj) {\n    if (newObj) {\n      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {\n        return;\n      }\n      api.update(obj = newObj);\n    } else {\n      api.remove();\n    }\n  };\n  return updater;\n}\nmodule.exports = function (list, options) {\n  options = options || {};\n  list = list || [];\n  var lastIdentifiers = modulesToDom(list, options);\n  return function update(newList) {\n    newList = newList || [];\n    for (var i = 0; i < lastIdentifiers.length; i++) {\n      var identifier = lastIdentifiers[i];\n      var index = getIndexByIdentifier(identifier);\n      stylesInDOM[index].references--;\n    }\n    var newLastIdentifiers = modulesToDom(newList, options);\n    for (var _i = 0; _i < lastIdentifiers.length; _i++) {\n      var _identifier = lastIdentifiers[_i];\n      var _index = getIndexByIdentifier(_identifier);\n      if (stylesInDOM[_index].references === 0) {\n        stylesInDOM[_index].updater();\n        stylesInDOM.splice(_index, 1);\n      }\n    }\n    lastIdentifiers = newLastIdentifiers;\n  };\n};\n\n//# sourceURL=webpack://todolist/./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+  \********************************************************************/
+/***/ ((module) => {
+
+eval("\n\nvar memo = {};\n\n/* istanbul ignore next  */\nfunction getTarget(target) {\n  if (typeof memo[target] === \"undefined\") {\n    var styleTarget = document.querySelector(target);\n\n    // Special case to return head of iframe instead of iframe itself\n    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n      try {\n        // This will throw an exception if access to iframe is blocked\n        // due to cross-origin restrictions\n        styleTarget = styleTarget.contentDocument.head;\n      } catch (e) {\n        // istanbul ignore next\n        styleTarget = null;\n      }\n    }\n    memo[target] = styleTarget;\n  }\n  return memo[target];\n}\n\n/* istanbul ignore next  */\nfunction insertBySelector(insert, style) {\n  var target = getTarget(insert);\n  if (!target) {\n    throw new Error(\"Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.\");\n  }\n  target.appendChild(style);\n}\nmodule.exports = insertBySelector;\n\n//# sourceURL=webpack://todolist/./node_modules/style-loader/dist/runtime/insertBySelector.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction insertStyleElement(options) {\n  var element = document.createElement(\"style\");\n  options.setAttributes(element, options.attributes);\n  options.insert(element, options.options);\n  return element;\n}\nmodule.exports = insertStyleElement;\n\n//# sourceURL=webpack://todolist/./node_modules/style-loader/dist/runtime/insertStyleElement.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+  \**********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction setAttributesWithoutAttributes(styleElement) {\n  var nonce =  true ? __webpack_require__.nc : 0;\n  if (nonce) {\n    styleElement.setAttribute(\"nonce\", nonce);\n  }\n}\nmodule.exports = setAttributesWithoutAttributes;\n\n//# sourceURL=webpack://todolist/./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, obj) {\n  var css = \"\";\n  if (obj.supports) {\n    css += \"@supports (\".concat(obj.supports, \") {\");\n  }\n  if (obj.media) {\n    css += \"@media \".concat(obj.media, \" {\");\n  }\n  var needLayer = typeof obj.layer !== \"undefined\";\n  if (needLayer) {\n    css += \"@layer\".concat(obj.layer.length > 0 ? \" \".concat(obj.layer) : \"\", \" {\");\n  }\n  css += obj.css;\n  if (needLayer) {\n    css += \"}\";\n  }\n  if (obj.media) {\n    css += \"}\";\n  }\n  if (obj.supports) {\n    css += \"}\";\n  }\n  var sourceMap = obj.sourceMap;\n  if (sourceMap && typeof btoa !== \"undefined\") {\n    css += \"\\n/*# sourceMappingURL=data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), \" */\");\n  }\n\n  // For old IE\n  /* istanbul ignore if  */\n  options.styleTagTransform(css, styleElement, options.options);\n}\nfunction removeStyleElement(styleElement) {\n  // istanbul ignore if\n  if (styleElement.parentNode === null) {\n    return false;\n  }\n  styleElement.parentNode.removeChild(styleElement);\n}\n\n/* istanbul ignore next  */\nfunction domAPI(options) {\n  if (typeof document === \"undefined\") {\n    return {\n      update: function update() {},\n      remove: function remove() {}\n    };\n  }\n  var styleElement = options.insertStyleElement(options);\n  return {\n    update: function update(obj) {\n      apply(styleElement, options, obj);\n    },\n    remove: function remove() {\n      removeStyleElement(styleElement);\n    }\n  };\n}\nmodule.exports = domAPI;\n\n//# sourceURL=webpack://todolist/./node_modules/style-loader/dist/runtime/styleDomAPI.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+  \*********************************************************************/
+/***/ ((module) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://todolist/./node_modules/style-loader/dist/runtime/styleTagTransform.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/storage.js */ \"./src/modules/storage.js\");\n/* harmony import */ var _modules_task_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/task.js */ \"./src/modules/task.js\");\n/* harmony import */ var _modules_project_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/project.js */ \"./src/modules/project.js\");\n/* harmony import */ var _modules_user_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/user.js */ \"./src/modules/user.js\");\n\n\n\n\n\n\n\nconst user = (0,_modules_storage_js__WEBPACK_IMPORTED_MODULE_0__.loadUserData)();\nconsole.log(JSON.stringify(user));\nuser.addProject({ title: \"pupu\",description:\"pupu\", taskList:[] });\n\n(0,_modules_storage_js__WEBPACK_IMPORTED_MODULE_0__.saveUserData)(user);\n\n//# sourceURL=webpack://todolist/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/storage.js */ \"./src/modules/storage.js\");\n/* harmony import */ var _modules_task_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/task.js */ \"./src/modules/task.js\");\n/* harmony import */ var _modules_project_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/project.js */ \"./src/modules/project.js\");\n/* harmony import */ var _modules_user_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/user.js */ \"./src/modules/user.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _images_edit_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./images/edit.svg */ \"./src/images/edit.svg\");\n/* harmony import */ var _images_delete_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images/delete.svg */ \"./src/images/delete.svg\");\n/* harmony import */ var _images_deletered_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./images/deletered.svg */ \"./src/images/deletered.svg\");\n/* harmony import */ var _images_logo_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./images/logo.png */ \"./src/images/logo.png\");\n\n\n\n\n\n\n\n\n\n\n\n\n\nclass DisplayManager { \n    constructor (user) {\n        this.user = user;\n    }\n    \n  addStaticElementsListeners() {\n    const homebtn = document.getElementById(\"homebtn\");\n    const settingsbtn = document.getElementById(\"settingsbtn\");\n    const addprojectbtn = document.getElementById(\"addprojectbtn\");\n    const duetodaybtn = document.getElementById(\"duetodaybtn\");\n\n    homebtn.addEventListener(\"click\", () => this.loadHome(this.user));\n    settingsbtn.addEventListener(\"click\", () => this.loadSettings(this.user));\n    addprojectbtn.addEventListener(\"click\", () => this.addProject(this.user));\n    duetodaybtn.addEventListener(\"click\", () => this.loadDueToday(this.user));\n  }\n\n  loadDueToday() {\n    return;\n  }\n\n  loadHome() {\n    this.refreshSidebar();\n\n    const content = document.getElementById(\"content\");\n    content.innerHTML = \"\";\n    const taskslist = document.createElement(\"div\");\n    taskslist.classList.add(\"taskslist\");\n\n    const allTasks = this.user.getAllTasks();\n\n    allTasks.forEach((tsk) => {\n      taskslist.appendChild(this.createTaskCard(tsk));\n    });\n\n    /*const addtaskbtn = document.createElement(\"div\");\n    addtaskbtn.id = \"addtaskbtn\";\n    addtaskbtn.innerHTML = \"<p>+</p>\";\n    taskslist.appendChild(addtaskbtn);\n    addtaskbtn.addEventListener(\"click\", () => addTask(this.user));*/\n  }\n\n  loadSettings() {\n    return;\n  }\n\n  addProject() {\n    return;\n  }\n\n  removeProject(project) {\n    this.user.removeProject(project);\n    this.refreshSidebar(this.user);\n  }\n\n  addTask() {\n    return;\n  }\n\n  createTaskCard(task) {\n    const template = document.getElementById(\"taskcardtemplate\");\n    const taskCard = template.content.cloneNode(true);\n\n    taskCard.querySelector(\".taskname b\").textContent = task.name;\n    taskCard.querySelector(\".taskname p:nth-child(2)\").textContent = task.description;\n    taskCard.querySelector(\".priorityduedate p:nth-child(1) b\").textContent = task.priority;\n    taskCard.querySelector(\".priorityduedate p:nth-child(2) b\").textContent = task.dueDate;\n    \n\n    const editbtn = new Image();\n    const removebtn = new Image();\n\n    editbtn.src = _images_edit_svg__WEBPACK_IMPORTED_MODULE_5__;\n    removebtn.src = _images_delete_svg__WEBPACK_IMPORTED_MODULE_6__;\n\n    const editremovecontrols = taskCard.querySelector(\".editremove\");\n    \n    editremovecontrols.appendChild(editbtn);\n    editremovecontrols.appendChild(removebtn);\n\n    return taskCard;\n  }\n\n  createProjectCard(project) {\n    const projectBoxDiv = document.createElement(\"div\");\n    projectBoxDiv.className = \"projectbox\";\n\n    const projectNameP = document.createElement(\"p\");\n    projectNameP.textContent = project.getTitle();\n\n    const removeBtnDiv = document.createElement(\"div\");\n    removeBtnDiv.className = \"removebtn\";\n\n    const deleteIconImg = new Image();\n    deleteIconImg.src = _images_deletered_svg__WEBPACK_IMPORTED_MODULE_7__;\n    deleteIconImg.alt = \"deleteicon\";\n\n    removeBtnDiv.addEventListener(\"click\", () => removeProject(project))\n   \n    removeBtnDiv.appendChild(deleteIconImg);\n    projectBoxDiv.appendChild(projectNameP);\n    projectBoxDiv.appendChild(removeBtnDiv);\n\n    return projectBoxDiv;\n  }\n\n  refreshSidebar() {\n    const logoDiv = document.querySelector(\".logo\");\n    const logoImg = new Image();\n    logoImg.src = _images_logo_png__WEBPACK_IMPORTED_MODULE_8__;\n    logoImg.alt = \"birdlistlogo\";\n    const logoText = document.createElement(\"p\");\n    logoText.textContent = \"BirdList\";\n    \n    logoDiv.appendChild(logoImg);\n    logoDiv.appendChild(logoText);\n   \n\n    const projectlist = document.getElementById(\"projectslist\");\n    projectlist.innerHTML = \"\";\n    this.user.getProjectList().forEach((project) => {\n        const proj = this.createProjectCard(project);\n        projectlist.appendChild(proj);\n    });\n    }\n}\n\nconst user = (0,_modules_storage_js__WEBPACK_IMPORTED_MODULE_0__.loadUserData)();\n\n\n\nconst display = new DisplayManager(user);\n(0,_modules_storage_js__WEBPACK_IMPORTED_MODULE_0__.saveUserDataListener)(display.user);\n\n\ndisplay.loadHome();\n\n//# sourceURL=webpack://todolist/./src/index.js?");
 
 /***/ }),
 
@@ -26,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Project)\n/* harmony export */ });\n/* harmony import */ var _task_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./task.js */ \"./src/modules/task.js\");\n/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/format.mjs\");\n\n\n\nclass Project {\n    constructor (title = \"My Example Project\", description = \"Short Project Description\", taskList = []) {\n        this.title = title;\n        this.description = description;\n        this.taskList = taskList.length ? taskList : [new _task_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()];\n        this.maxLengthTitle = 15;\n        this.maxLengthDescription = 30;\n    }\n\n    getTitle() {\n        return this.title;\n    }\n    \n    setTitle(value) {\n        value.length <= this.maxLengthTitle ? this.title = value : this.title = value.slice(0, this.maxLengthTitle); \n    }\n\n    getDescription() {\n        return this.description;\n    }\n    \n    setDescription(value) {\n        value.length <= this.maxLengthDescription ? this.description = value : this.description = value.slice(0, this.maxLengthDescription); \n    }\n\n    addTask(value) {\n        this.taskList.push(new _task_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](value.title, value.description, value.dueDate, value.priority, value.noteList));\n    }\n\n    removeTask(value) {\n        const index = this.taskList.findIndex(task => task.title === value.title);\n        this.taskList.splice(index, 1);\n    }\n\n    clearCompleteTasks() {\n        this.taskList = this.taskList.filter(task => !task.isComplete);\n    }\n\n    getTasksDueToday() {\n        const tasksDueToday = [];\n        this.taskList.forEach(task => {\n                if ((0,date_fns__WEBPACK_IMPORTED_MODULE_1__.format)(new Date(), \"yyyy-mm-dd\") === (0,date_fns__WEBPACK_IMPORTED_MODULE_1__.format)(task.dueDate, \"yyyy-mm-dd\")) {\n                    tasksDueToday.push(task);\n                }\n            });\n            \n        return tasksDueToday;\n    }\n}\n\n//# sourceURL=webpack://todolist/./src/modules/project.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Project)\n/* harmony export */ });\n/* harmony import */ var _task_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./task.js */ \"./src/modules/task.js\");\n/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/format.mjs\");\n\n\n\nclass Project {\n    constructor (title = \"My Example Project\", description = \"Short Project Description\", taskList = []) {\n        this.title = title;\n        this.description = description;\n        this.taskList = taskList.length ? taskList : [new _task_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()];\n        this.maxLengthTitle = 15;\n        this.maxLengthDescription = 30;\n    }\n\n    getTitle() {\n        return this.title;\n    }\n    \n    setTitle(value) {\n        value.length <= this.maxLengthTitle ? this.title = value : this.title = value.slice(0, this.maxLengthTitle); \n    }\n\n    getDescription() {\n        return this.description;\n    }\n    \n    setDescription(value) {\n        value.length <= this.maxLengthDescription ? this.description = value : this.description = value.slice(0, this.maxLengthDescription); \n    }\n\n    addTask(value) {\n        this.taskList.push(new _task_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](value.title, value.description, value.dueDate, value.priority, value.noteList));\n    }\n\n    removeTask(value) {\n        const index = this.taskList.findIndex(task => task.title === value.title);\n        this.taskList.splice(index, 1);\n    }\n\n    getTaskList() {\n        return this.taskList;\n    }\n\n    clearCompleteTasks() {\n        this.taskList = this.taskList.filter(task => !task.isComplete);\n    }\n\n    getTasksDueToday() {\n        const tasksDueToday = [];\n        this.taskList.forEach(task => {\n                if ((0,date_fns__WEBPACK_IMPORTED_MODULE_1__.format)(new Date(), \"yyyy-mm-dd\") === (0,date_fns__WEBPACK_IMPORTED_MODULE_1__.format)(task.dueDate, \"yyyy-mm-dd\")) {\n                    tasksDueToday.push(task);\n                }\n            });\n            \n        return tasksDueToday;\n    }\n}\n\n//# sourceURL=webpack://todolist/./src/modules/project.js?");
 
 /***/ }),
 
@@ -36,7 +146,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   checkForLocalStorage: () => (/* binding */ checkForLocalStorage),\n/* harmony export */   loadUserData: () => (/* binding */ loadUserData),\n/* harmony export */   saveUserData: () => (/* binding */ saveUserData)\n/* harmony export */ });\n/* harmony import */ var _user_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user.js */ \"./src/modules/user.js\");\n/* harmony import */ var _project_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project.js */ \"./src/modules/project.js\");\n/* harmony import */ var _task_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./task.js */ \"./src/modules/task.js\");\n\n\n\n\nfunction checkForLocalStorage() {\n    let storage;\n    try {\n        storage = window.localStorage;\n        const x = \"BINGO BANGO BONGO\";\n        storage.setItem(x, x);\n        storage.removeItem(x);\n          return true;\n        } catch (e) {\n          return (\n            e instanceof DOMException &&\n            e.name === \"QuotaExceededError\" &&\n            storage &&\n            storage.length !== 0\n          );\n        }\n}\n\nfunction saveUserData(userobject) {\n    const userJSON = JSON.stringify(userobject);\n    localStorage.setItem(\"userData\", userJSON);\n}\n\nfunction loadUserData() {\n  if (checkForLocalStorage && localStorage.getItem(\"userData\") !== null) {\n      const loadedUser = reviveData();\n  \n      return loadedUser;\n  } else {\n      const name = prompt(\"what's your name?\");\n      const newUser = new _user_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](name, []);\n  \n      return newUser;\n  }\n  }\n\nfunction reviveData() {\n\n    const userData = JSON.parse(localStorage.getItem(\"userData\"));\n\n    const revivedProjectList = [];\n\n    for (let i = 0; i < userData.projectList.length; i++) {\n        const revivedTaskList = [];\n        userData.projectList[i].taskList.forEach(tsk => revivedTaskList.push(new _task_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"](tsk.title, tsk.description, tsk.dueDate, tsk.priority, tsk.noteList)));\n        revivedProjectList.push(new _project_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"](userData.projectList[i].title, userData.projectList[i].description, revivedTaskList));\n    }\n\n    return new _user_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](userData.name, revivedProjectList);\n\n}\n\n\n\n//# sourceURL=webpack://todolist/./src/modules/storage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   checkForLocalStorage: () => (/* binding */ checkForLocalStorage),\n/* harmony export */   loadUserData: () => (/* binding */ loadUserData),\n/* harmony export */   saveUserDataListener: () => (/* binding */ saveUserDataListener)\n/* harmony export */ });\n/* harmony import */ var _user_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user.js */ \"./src/modules/user.js\");\n/* harmony import */ var _project_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project.js */ \"./src/modules/project.js\");\n/* harmony import */ var _task_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./task.js */ \"./src/modules/task.js\");\n\n\n\n\nfunction checkForLocalStorage() {\n    let storage;\n    try {\n        storage = window.localStorage;\n        const x = \"BINGO BANGO BONGO\";\n        storage.setItem(x, x);\n        storage.removeItem(x);\n          return true;\n        } catch (e) {\n          return (\n            e instanceof DOMException &&\n            e.name === \"QuotaExceededError\" &&\n            storage &&\n            storage.length !== 0\n          );\n        }\n}\n\nfunction saveUserDataListener(user) {\n  if (checkForLocalStorage()) {\n    const userJSON = JSON.stringify(user);\n  \n    window.addEventListener(\"beforeunload\", function () {\n        localStorage.setItem(\"userData\", userJSON);\n    });\n  }\n}\n\nfunction loadUserData() {\n  if (checkForLocalStorage && localStorage.getItem(\"userData\") !== null) {\n      const loadedUser = reviveData();\n  \n      return loadedUser;\n  } else {\n      const name = prompt(\"what's your name?\");\n      const newUser = new _user_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](name, []);\n  \n      return newUser;\n  }\n  }\n\nfunction reviveData() {\n\n    const userData = JSON.parse(localStorage.getItem(\"userData\"));\n\n    const revivedProjectList = [];\n\n    for (let i = 0; i < userData.projectList.length; i++) {\n        const revivedTaskList = [];\n        userData.projectList[i].taskList.forEach(tsk => revivedTaskList.push(new _task_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"](tsk.title, tsk.description, tsk.dueDate, tsk.priority, tsk.noteList)));\n        revivedProjectList.push(new _project_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"](userData.projectList[i].title, userData.projectList[i].description, revivedTaskList));\n    }\n\n    return new _user_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](userData.name, revivedProjectList);\n\n}\n\n\n\n//# sourceURL=webpack://todolist/./src/modules/storage.js?");
 
 /***/ }),
 
@@ -56,7 +166,57 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ User)\n/* harmony export */ });\n/* harmony import */ var _project_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./project.js */ \"./src/modules/project.js\");\n\n\nclass User {\n    constructor (name = \"Username\", projectList = []) {\n        this.name = name;\n        this.projectList = projectList.length ? projectList : [new _project_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()];\n        this.maxLengthName = 20;\n    }\n\n    getName() {\n        return this.name;\n    }\n\n    setName(value) {\n        value < this.maxLengthName ? this.name = value : this.name = value.slice(0, this.maxLengthName);\n    }\n\n    addProject(value) {\n        this.projectList.push(new _project_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](value.title, value.description, value.taskList))\n    }\n\n    removeProject(value) {\n        const index = this.projectList.findIndex(proj => proj.title === value.title);\n        this.taskList.splice(index, 1);\n    }\n\n    getProjectList() {\n        return this.projectList;\n    }\n}\n\n//# sourceURL=webpack://todolist/./src/modules/user.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ User)\n/* harmony export */ });\n/* harmony import */ var _project_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./project.js */ \"./src/modules/project.js\");\n\n\nclass User {\n    constructor (name = \"Username\", projectList = []) {\n        this.name = name;\n        this.projectList = projectList.length ? projectList : [new _project_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()];\n        this.maxLengthName = 20;\n\n        this.getProjectList = this.getProjectList.bind(this);\n    }\n\n    getName() {\n        return this.name;\n    }\n\n    setName(value) {\n        value < this.maxLengthName ? this.name = value : this.name = value.slice(0, this.maxLengthName);\n    }\n\n    addProject(value) {\n        this.projectList.push(new _project_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](value.title, value.description, value.taskList))\n    }\n\n    removeProject(value) {\n        const index = this.projectList.findIndex(proj => proj.title === value.title);\n        this.taskList.splice(index, 1);\n    }\n\n    getProjectList() {\n        return this.projectList;\n    }\n\n    getAllTasks() {\n        const allTasks = [];\n        this.projectList.forEach(project => {\n            project.getTaskList().forEach(task => {\n                allTasks.push(task);\n            });\n        });\n        return allTasks;\n    }\n}\n\n//# sourceURL=webpack://todolist/./src/modules/user.js?");
+
+/***/ }),
+
+/***/ "./src/fonts/CartooNature.ttf":
+/*!************************************!*\
+  !*** ./src/fonts/CartooNature.ttf ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"f24a695375d0035de25b.ttf\";\n\n//# sourceURL=webpack://todolist/./src/fonts/CartooNature.ttf?");
+
+/***/ }),
+
+/***/ "./src/images/delete.svg":
+/*!*******************************!*\
+  !*** ./src/images/delete.svg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"286c0591cf2f5ae30cff.svg\";\n\n//# sourceURL=webpack://todolist/./src/images/delete.svg?");
+
+/***/ }),
+
+/***/ "./src/images/deletered.svg":
+/*!**********************************!*\
+  !*** ./src/images/deletered.svg ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"e16f47117d1cd1afe516.svg\";\n\n//# sourceURL=webpack://todolist/./src/images/deletered.svg?");
+
+/***/ }),
+
+/***/ "./src/images/edit.svg":
+/*!*****************************!*\
+  !*** ./src/images/edit.svg ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"2edb6f2b6a1d150bf2e4.svg\";\n\n//# sourceURL=webpack://todolist/./src/images/edit.svg?");
+
+/***/ }),
+
+/***/ "./src/images/logo.png":
+/*!*****************************!*\
+  !*** ./src/images/logo.png ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"15d47e24392469da4f12.png\";\n\n//# sourceURL=webpack://todolist/./src/images/logo.png?");
 
 /***/ }),
 
@@ -424,7 +584,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
+/******/ 			id: moduleId,
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
@@ -436,7 +596,22 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -447,6 +622,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 				}
 /******/ 			}
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -463,6 +650,60 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
