@@ -48,8 +48,8 @@ function reviveData() {
 
     for (let i = 0; i < userData.projectList.length; i++) {
         const revivedTaskList = [];
-        userData.projectList[i].taskList.forEach(tsk => revivedTaskList.push(new Task(tsk.title, tsk.description, tsk.dueDate, tsk.priority, tsk.noteList)));
-        revivedProjectList.push(new Project(userData.projectList[i].title, userData.projectList[i].description, revivedTaskList));
+        userData.projectList[i].taskList.forEach(tsk => revivedTaskList.push(new Task(tsk.taskId, tsk.projectId, tsk.title, tsk.description, tsk.dueDate, tsk.priority, tsk.noteList)));
+        revivedProjectList.push(new Project(userData.projectList[i].projectId, userData.projectList[i].title, userData.projectList[i].description, revivedTaskList));
     }
 
     return new User(userData.name, revivedProjectList);

@@ -22,7 +22,7 @@ export default class User {
     }
 
     removeProject(value) {
-        const index = this.projectList.findIndex(proj => proj.title === value.title);
+        const index = this.projectList.findIndex(proj => proj.getProjectId() === value.getProjectId());
         this.projectList.splice(index, 1);
     }
 

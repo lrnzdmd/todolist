@@ -1,5 +1,9 @@
+import createId from "./createid.js";
+
 export default class Task {
-    constructor (title = "Example task..", description = "Short description", dueDate = " ", priority = 1, noteList = []) {
+    constructor (taskId = createId("Example task...."), projectId, title = "Example task..", description = "Short description", dueDate = " ", priority = "Normal", noteList = []) {
+        this.taskId = taskId;
+        this.projectId = projectId;
         this.isComplete = false;
         this.dueDate = dueDate;
         this.priority = priority;
@@ -9,6 +13,14 @@ export default class Task {
         this.noteList = noteList.length ? noteList : ["Notes about the task"];
         this.maxLengthTitle = 25;
         this.maxLengthDescription = 50; 
+    }
+
+    getTaskId() {
+        return this.taskId;
+    }
+
+    getProjectId() {
+        return this.projectId;
     }
     
     // Get and set method for task title...
@@ -61,3 +73,4 @@ export default class Task {
         return this.noteList;
     }
 }
+

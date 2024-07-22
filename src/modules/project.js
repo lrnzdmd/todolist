@@ -1,13 +1,19 @@
-import Task from "./task.js"
+import createId from "./createid.js";
+import Task from "./task.js";
 import { format, isValid } from 'date-fns';
 
 export default class Project {
-    constructor (title = "My Example Project", description = "Short Project Description", taskList = []) {
+    constructor (projectId = createId("New Project"), title = "New Project", description = "Short Project Description", taskList = []) {
+        this.projectId = projectId;
         this.title = title;
         this.description = description;
         this.taskList = taskList.length ? taskList : [new Task()];
         this.maxLengthTitle = 15;
         this.maxLengthDescription = 30;
+    }
+
+    getProjectId() {
+        return this.projectId;
     }
 
     getTitle() {
@@ -27,11 +33,12 @@ export default class Project {
     }
 
     addTask(value) {
-        this.taskList.push(new Task(value.title, value.description, value.dueDate, value.priority, value.noteList));
+        this.taskList.push(new Task(this.projectId, value.title, value.description, value.dueDate, value.priority, value.noteList));
     }
 
     removeTask(value) {
-        const index = this.taskList.findIndex(task => task.title === value.title);
+        const index = this.taskList.findIndex(task => task.getTaskId() === value.getTaskId())
+        console.log(`index: ${index}`);
         this.taskList.splice(index, 1);
     }
 
@@ -57,3 +64,4 @@ export default class Project {
         return tasksDueToday;
     }
 }
+
