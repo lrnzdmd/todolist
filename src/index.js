@@ -14,12 +14,19 @@ class DisplayManager {
   constructor(user) {
     this.user = user;
     this.activeProject = "home";
+    this.activeTask;
   }
   getActiveProject() {
     return this.activeProject;
   }
   setActiveProject(value) {
     this.activeProject = value;
+  }
+  getActiveTask() {
+    return this.activeTask;
+  }
+  setActiveTask(value) {
+    this.activeTask = value;
   }
 
   addStaticElementsListeners() {
@@ -88,8 +95,9 @@ class DisplayManager {
   }
 
   addTask() {
-    console.log("beep boop add task boop");
-    return;
+       const index = this.user.projectList.findIndex(proj => proj.title === this.activeProject.title);
+       user.getProjectList()[index].addTask({});
+       this.refreshPage();
   }
 
   createTaskCard(task) {
@@ -200,6 +208,8 @@ class DisplayManager {
 
         const homeList = document.createElement("div");
         homeList.id = "taskslist";
+
+        this.setActiveTask(this.user.getAllTasks()[0])
         const homeallTasks = this.user.getAllTasks();
         homeallTasks.forEach((tsk) => {
           homeList.appendChild(this.createTaskCard(tsk));
@@ -214,6 +224,8 @@ class DisplayManager {
 
             const duetodayList = document.createElement("div");
             duetodayList.id = "taskslist";
+
+            this.setActiveTask(this.user.getTasksDueToday()[0]);
             const duetodayTasks = this.user.getTasksDueToday();
             duetodayTasks.forEach((tsk) => {
                 duetodayList.appendChild(this.createTaskCard(tsk));
@@ -222,6 +234,7 @@ class DisplayManager {
         break;
 
       default:
+        this.setActiveTask(this.activeProject.getTaskList()[0]);
         console.log(`console switched on ${this.activeProject.title}`);
         const projectList = document.createElement("div");
         projectList.id = "taskslist";
