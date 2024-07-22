@@ -1,5 +1,5 @@
 import Task from "./task.js"
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns';
 
 export default class Project {
     constructor (title = "My Example Project", description = "Short Project Description", taskList = []) {
@@ -45,11 +45,14 @@ export default class Project {
 
     getTasksDueToday() {
         const tasksDueToday = [];
+        const today = new Date();
         this.taskList.forEach(task => {
-                if (format(new Date(), "yyyy-mm-dd") === format(task.dueDate, "yyyy-mm-dd")) {
-                    tasksDueToday.push(task);
-                }
-            });
+            const taskDueDate = new Date(task.dueDate);
+    
+            if (isValid(taskDueDate) && format(today, "yyyy-MM-dd") === format(taskDueDate, "yyyy-MM-dd")) {
+                tasksDueToday.push(task);
+            }
+        });
             
         return tasksDueToday;
     }

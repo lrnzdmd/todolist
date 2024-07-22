@@ -6,7 +6,7 @@ export default class User {
         this.projectList = projectList.length ? projectList : [new Project()];
         this.maxLengthName = 20;
 
-        this.getProjectList = this.getProjectList.bind(this);
+        this.removeProject = this.removeProject.bind(this);
     }
 
     getName() {
@@ -23,7 +23,7 @@ export default class User {
 
     removeProject(value) {
         const index = this.projectList.findIndex(proj => proj.title === value.title);
-        this.taskList.splice(index, 1);
+        this.projectList.splice(index, 1);
     }
 
     getProjectList() {
@@ -38,5 +38,15 @@ export default class User {
             });
         });
         return allTasks;
+    }
+
+    getTasksDueToday() {
+        const tasksDueToday = [];
+        this.projectList.forEach(project => {
+                project.getTasksDueToday().forEach(task => tasksDueToday.push(task));
+            });
+            
+        return tasksDueToday;
+
     }
 }

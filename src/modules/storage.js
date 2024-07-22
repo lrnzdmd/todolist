@@ -20,25 +20,22 @@ function checkForLocalStorage() {
         }
 }
 
-function saveUserDataListener(user) {
+function saveUserData(user) {
   if (checkForLocalStorage()) {
-    const userJSON = JSON.stringify(user);
-  
-    window.addEventListener("beforeunload", function () {
+        const userJSON = JSON.stringify(user);
         localStorage.setItem("userData", userJSON);
-    });
-  }
+      }
 }
 
 function loadUserData() {
   if (checkForLocalStorage && localStorage.getItem("userData") !== null) {
       const loadedUser = reviveData();
-  
+      
       return loadedUser;
   } else {
       const name = prompt("what's your name?");
       const newUser = new User(name, []);
-  
+    
       return newUser;
   }
   }
@@ -59,4 +56,4 @@ function reviveData() {
 
 }
 
-export { checkForLocalStorage, saveUserDataListener, loadUserData };
+export { checkForLocalStorage, saveUserData, loadUserData };

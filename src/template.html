@@ -10,7 +10,7 @@
     </div>
     <div class="header">
         <div class="projname">
-            <h2 id="hprojectname">Home</h2>
+            <h2 id="hprojecttitle">Home</h2>
             <p id="hprojectdescr">Let's get to it!</p>
         </div>
         <div class="tasksduetoday">
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="sidebar">
-        <p id="addprojectbtn"><b>New Project</b></p>   
+        <p class="plusbtnwhite" id="addprojectbtn"><b>+</b></p>   
         <div class="projects" id="projectslist">
             
         </div>
@@ -30,11 +30,27 @@
     <div class="content" id="content">
         <div id="taskslist">
             
-            <div id="addtaskbtn"><p>+</p></div>
+            <div class="plusbtn" id="addtaskbtn"><p>+</p></div>
         </div>
     </div>
     <dialog id="removeconfirmation">
         
+    </dialog>
+    <dialog id="editproject">
+            <form action="editProject" method="dialog" id="editprojectform">
+                <div class="formfield">
+                    <label for="title">Project Title</label>
+                    <input type="text" name="title" id="title" required>
+                </div>
+                <div class="formfield">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" required>
+                </div>
+                <div class="buttons">
+                <button type="button" class="cancelbtn" id="cancelbtn">Cancel</button>
+                <button type="submit">Confirm</button>
+                </div>
+            </form>
     </dialog>
     <template id="taskcardtemplate">
         <div class="task">
@@ -47,7 +63,7 @@
                 </div>
             </div>
             <div class="priorityduedate">
-                <p>Priority: <b>/b></p>
+                <p>Priority: <b></b></p>
                 <p>Due: <b></b></p>
             </div>
             </div>
