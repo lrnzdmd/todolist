@@ -33,12 +33,11 @@ export default class Project {
     }
 
     addTask(value) {
-        this.taskList.push(new Task(this.projectId, value.title, value.description, value.dueDate, value.priority, value.noteList));
+        this.taskList.push(new Task(value.projectId, value.title, value.description, value.dueDate, value.priority, value.noteList));
     }
 
     removeTask(value) {
         const index = this.taskList.findIndex(task => task.getTaskId() === value.getTaskId())
-        console.log(`index: ${index}`);
         this.taskList.splice(index, 1);
     }
 

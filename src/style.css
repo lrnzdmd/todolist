@@ -16,7 +16,7 @@ dialog {
     
 }
 
-#editprojectform {
+#editprojectform, #edittaskform {
     padding:1.5rem;
     display:flex;
     flex-direction: column;
@@ -136,7 +136,7 @@ body {
     display: none;
 }
 
-.projectbox p, #settingsbtn{
+.projectbox p, #settingsbtn, #cleandonetasksbtn {
     padding:0.1rem 1rem 0.1rem 1rem;
     border-radius: 10px;
     background-color: azure;
@@ -165,9 +165,7 @@ body {
     transform: translate(-1px, -1px);
 }
 
-.settings {
-    cursor: pointer;
-}
+
 
 
 .content {

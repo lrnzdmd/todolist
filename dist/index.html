@@ -26,6 +26,9 @@
         <div class="settings" id="settingsbtn">
             <p>SETTINGS</p>
         </div>
+        <div class="settings" id="cleandonetasksbtn">
+            <p>CLEAN DONE TASKS</p>
+        </div>
     </div>
     <div class="content" id="content">
         <div id="taskslist">
@@ -47,11 +50,39 @@
                     <input type="text" name="description" id="description" required>
                 </div>
                 <div class="buttons">
-                <button type="button" class="cancelbtn" id="cancelbtn">Cancel</button>
+                <button type="button" class="cancelbtn">Cancel</button>
                 <button type="submit">Confirm</button>
                 </div>
             </form>
     </dialog>
+    <dialog id="edittask">
+        <form action="edittask" method="dialog" id="edittaskform">
+            <div class="formfield">
+                <label for="title">Task Title</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+            <div class="formfield">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" required>
+            </div>
+            <div class="formfield">
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority">
+                    <option value="High">High</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+            <div class="formfield">
+                <label for="duedate">Due Date</label>
+                <input type="date" id="duedate" name="duedate">
+            </div>
+            <div class="buttons">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit">Confirm</button>
+            </div>
+        </form>
+</dialog>
     <template id="taskcardtemplate">
         <div class="task">
             <div class="flexcontainer">
@@ -68,7 +99,9 @@
             </div>
             </div>
             <div class="expandedtask">
-                <div id="notelist"></div>
+                <div id="notelist">
+                    
+                </div>
                 <div class="editremove">
                     
                 </div>      

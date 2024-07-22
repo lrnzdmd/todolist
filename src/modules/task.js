@@ -1,7 +1,8 @@
 import createId from "./createid.js";
+import { format, isValid } from 'date-fns';
 
 export default class Task {
-    constructor (taskId = createId("Example task...."), projectId, title = "Example task..", description = "Short description", dueDate = " ", priority = "Normal", noteList = []) {
+    constructor (projectId, taskId = createId("Example task"), title = "Example task..", description = "Short description", dueDate = " ", priority = "Normal", noteList = []) {
         this.taskId = taskId;
         this.projectId = projectId;
         this.isComplete = false;
@@ -41,7 +42,11 @@ export default class Task {
     }
     // ... and the due date of the task ...
     getDueDate() {
-        return this.dueDate;
+        if (isValid(this.dueDate)) {
+        return format(this.dueDate, "dd-MM-yyyy");
+        }
+
+        else return " ";
     }
 
     setDueDate(value) {

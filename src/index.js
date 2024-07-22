@@ -34,11 +34,13 @@ class DisplayManager {
     const settingsbtn = document.getElementById("settingsbtn");
     const addprojectbtn = document.getElementById("addprojectbtn");
     const duetodaybtn = document.getElementById("duetodaybtn");
-    const cancelbtn = document.getElementById("cancelbtn");
+    const cancelbtns = document.querySelectorAll(".cancelbtn");
     const editprojectform = document.getElementById("editprojectform");
+    const edittaskform = document.getElementById("edittaskform");
 
-    cancelbtn.addEventListener("click", this.closeDialog);
+    cancelbtns.forEach(btn => btn.addEventListener("click", this.closeDialog));
     editprojectform.addEventListener("submit", (event) => this.editProject(event, this.activeProject));
+    edittaskform.addEventListener("submit", (event) => this.editTask(event, this.activeTask));
     homebtn.addEventListener("click", () => this.loadHome(this.user));
     settingsbtn.addEventListener("click", () => this.loadSettings(this.user));
     addprojectbtn.addEventListener("click", () => this.addProject(this.user));
@@ -48,9 +50,6 @@ class DisplayManager {
   loadHome() {
     this.setActiveProject("home");
     this.refreshPage();
-
-    // this shows the add task button, not supposed to be in the home but sice i wrote it i'll keep it here
-    
   }
 
   loadProject(project) {
@@ -78,7 +77,7 @@ class DisplayManager {
     this.refreshPage();
   }
   callDialogEditProject(project) {
-    this.activeProject = project;
+    this.setActiveProject(project);
     const editProjectDialog = document.getElementById("editproject");
     editProjectDialog.showModal();
   }
@@ -91,21 +90,43 @@ class DisplayManager {
     project.setDescription(formData.description);
     editprojectform.reset();
     this.closeDialog(event);
-    this.refreshPage()
+    this.refreshPage();
   }
 
   addTask() {
-       const index = this.user.projectList.findIndex(proj => (proj.title === this.activeProject.getTitle() && proj.description === this.activeProject.getDescription()));
-       user.getProjectList()[index].addTask({});
+       const index = this.user.projectList.findIndex(proj => (proj.getProjectId() === this.activeProject.getProjectId()));
+       user.getProjectList()[index].addTask({projectId: this.activeProject.getProjectId()});
        this.refreshPage();
   }
 
   removeTask(task) {
-    if (this.activeProject === "home" || this.activeProject === "duetoday") {
-        this.user.getProjectList().forEach(project => project.getTaskList().forEach(task))
-        }
-    const index = this.user.getProjectList().findIndex(proj => (proj.title === this.activeProject.getTitle() && proj.description === this.activeProject.getDescription()));
+    
+    const index = this.user.getProjectList().findIndex(proj => proj.getTaskList().some(tsk => tsk.taskId === task.taskId));
     this.user.getProjectList()[index].removeTask(task);
+    this.refreshPage();
+  }
+
+  callDialogEditTask(task){
+    this.activeTask = task;
+    const editTaskDialog = document.getElementById("edittask");
+    editTaskDialog.showModal();
+  }
+
+  editTask(event, task) {
+    event.preventDefault();
+    const data = new FormData(edittaskform);
+    const formData = Object.fromEntries(data.entries());
+    task.setTitle(formData.title);
+    task.setDescription(formData.description);
+    task.setPriority(formData.priority);
+    task.setDueDate(new Date(formData.duedate));
+    edittaskform.reset();
+    this.closeDialog(event);
+    this.refreshPage();
+  }
+
+  expandTask(task) {
+    this.setActiveTask(task);
     this.refreshPage();
   }
 
@@ -113,7 +134,7 @@ class DisplayManager {
     const template = document.getElementById("taskcardtemplate");
     const taskCard = template.content.cloneNode(true);
 
-    taskCard.querySelector(".taskname b").textContent = task.getTitle();
+    taskCard.querySelector(".taskname b").textContent = task.getTitle() + " " + task.getTaskId();
     taskCard.querySelector(".taskname p:nth-child(2)").textContent =
       task.getDescription();
     taskCard.querySelector(".priorityduedate p:nth-child(1) b").textContent =
@@ -125,6 +146,16 @@ class DisplayManager {
       taskCard.querySelector(".priorityduedate p:nth-child(2)").textContent =
         " ";
     }
+    if (task.getTaskId() === this.activeTask.getTaskId()){
+      task.getNoteList().forEach(note => {
+        const n = document.createElement("p");
+        n.textContent = note;
+        taskCard.querySelector("#notelist").appendChild(n);
+
+      });
+    }
+
+    const prova = taskCard.querySelector(".task");
 
     const editbtn = new Image();
     const removebtn = new Image();
@@ -133,13 +164,14 @@ class DisplayManager {
     removebtn.src = deleteicon;
 
     removebtn.addEventListener("click", () => this.removeTask(task));
+    editbtn.addEventListener("click", () => this.callDialogEditTask(task));
+    prova.addEventListener("click", () => this.expandTask(task));
 
     const editremovecontrols = taskCard.querySelector(".editremove");
 
     editremovecontrols.appendChild(editbtn);
-    if (this.activeProject !== "home" && this.activeProject !== "duetoday") {
     editremovecontrols.appendChild(removebtn);
-    }
+    
 
     return taskCard;
   }
@@ -217,13 +249,16 @@ class DisplayManager {
 
     switch (this.activeProject) {
       case "home":
+        
         console.log("refresh switched on home");
 
         const homeList = document.createElement("div");
         homeList.id = "taskslist";
 
-        this.setActiveTask(this.user.getAllTasks()[0])
         const homeallTasks = this.user.getAllTasks();
+        if (!this.getActiveTask()){
+          this.setActiveTask(homeallTasks[0]);
+        }
         homeallTasks.forEach((tsk) => {
           homeList.appendChild(this.createTaskCard(tsk));
         });
@@ -238,8 +273,10 @@ class DisplayManager {
             const duetodayList = document.createElement("div");
             duetodayList.id = "taskslist";
 
-            this.setActiveTask(this.user.getTasksDueToday()[0]);
             const duetodayTasks = this.user.getTasksDueToday();
+            if (!this.getActiveTask()){
+              this.setActiveTask(duetodayTasks[0]);
+            }
             duetodayTasks.forEach((tsk) => {
                 duetodayList.appendChild(this.createTaskCard(tsk));
             });
@@ -247,8 +284,9 @@ class DisplayManager {
         break;
 
       default:
-        this.setActiveTask(this.activeProject.getTaskList()[0]);
-        console.log(`console switched on ${this.activeProject.title}`);
+        if (!this.getActiveTask()){
+          this.setActiveTask(this.getActiveProject().getTaskList()[0]);
+        }
         const projectList = document.createElement("div");
         projectList.id = "taskslist";
         this.activeProject.getTaskList().forEach((tsk) => {
@@ -286,3 +324,4 @@ setInterval(saveUserData, 5000, display.user);
 display.addStaticElementsListeners();
 
 display.loadHome();
+
