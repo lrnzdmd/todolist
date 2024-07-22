@@ -95,9 +95,18 @@ class DisplayManager {
   }
 
   addTask() {
-       const index = this.user.projectList.findIndex(proj => proj.title === this.activeProject.title);
+       const index = this.user.projectList.findIndex(proj => (proj.title === this.activeProject.getTitle() && proj.description === this.activeProject.getDescription()));
        user.getProjectList()[index].addTask({});
        this.refreshPage();
+  }
+
+  removeTask(task) {
+    if (this.activeProject === "home" || this.activeProject === "duetoday") {
+        this.user.getProjectList().forEach(project => project.getTaskList().forEach(task))
+        }
+    const index = this.user.getProjectList().findIndex(proj => (proj.title === this.activeProject.getTitle() && proj.description === this.activeProject.getDescription()));
+    this.user.getProjectList()[index].removeTask(task);
+    this.refreshPage();
   }
 
   createTaskCard(task) {
@@ -123,10 +132,14 @@ class DisplayManager {
     editbtn.src = editicon;
     removebtn.src = deleteicon;
 
+    removebtn.addEventListener("click", () => this.removeTask(task));
+
     const editremovecontrols = taskCard.querySelector(".editremove");
 
     editremovecontrols.appendChild(editbtn);
+    if (this.activeProject !== "home" && this.activeProject !== "duetoday") {
     editremovecontrols.appendChild(removebtn);
+    }
 
     return taskCard;
   }
