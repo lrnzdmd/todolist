@@ -37,7 +37,10 @@ class DisplayManager {
     const cancelbtns = document.querySelectorAll(".cancelbtn");
     const editprojectform = document.getElementById("editprojectform");
     const edittaskform = document.getElementById("edittaskform");
+    const cleandonetasksbtn = document.getElementById("cleandonetasksbtn");
+    
 
+    cleandonetasksbtn.addEventListener("click", () => this.cleanDoneTasks(this.user));
     cancelbtns.forEach(btn => btn.addEventListener("click", this.closeDialog));
     editprojectform.addEventListener("submit", (event) => this.editProject(event, this.activeProject));
     edittaskform.addEventListener("submit", (event) => this.editTask(event, this.activeTask));
@@ -74,6 +77,7 @@ class DisplayManager {
 
   removeProject(project) {
     this.user.removeProject(project);
+    this.setActiveProject("home");
     this.refreshPage();
   }
   callDialogEditProject(project) {
@@ -109,6 +113,8 @@ class DisplayManager {
   callDialogEditTask(task){
     this.activeTask = task;
     const editTaskDialog = document.getElementById("edittask");
+    const editnotebox = document.getElementById("notes");
+    editnotebox.textContent = task.getNoteList()[0];
     editTaskDialog.showModal();
   }
 
@@ -120,6 +126,8 @@ class DisplayManager {
     task.setDescription(formData.description);
     task.setPriority(formData.priority);
     task.setDueDate(new Date(formData.duedate));
+    task.getNoteList()[0] = formData.notes.replace(/\n/g, '<br>');
+    console.log(formData.notes);
     edittaskform.reset();
     this.closeDialog(event);
     this.refreshPage();
@@ -130,11 +138,23 @@ class DisplayManager {
     this.refreshPage();
   }
 
+  checkTask(task) {
+    task.checkComplete();
+    this.refreshPage();
+  }
+
+  cleanDoneTasks(user) {
+    user.getProjectList().forEach(project => project.clearCompleteTasks());
+    this.refreshPage();
+  }
+
   createTaskCard(task) {
     const template = document.getElementById("taskcardtemplate");
     const taskCard = template.content.cloneNode(true);
 
-    taskCard.querySelector(".taskname b").textContent = task.getTitle() + " " + task.getTaskId();
+    const checkmark = taskCard.querySelector(".check");
+
+    taskCard.querySelector(".taskname b").textContent = task.getTitle();
     taskCard.querySelector(".taskname p:nth-child(2)").textContent =
       task.getDescription();
     taskCard.querySelector(".priorityduedate p:nth-child(1) b").textContent =
@@ -146,16 +166,27 @@ class DisplayManager {
       taskCard.querySelector(".priorityduedate p:nth-child(2)").textContent =
         " ";
     }
+
+    
+
     if (task.getTaskId() === this.activeTask.getTaskId()){
       task.getNoteList().forEach(note => {
-        const n = document.createElement("p");
-        n.textContent = note;
+        const n = document.createElement("span");
+        n.innerHTML = note;
         taskCard.querySelector("#notelist").appendChild(n);
-
       });
     }
+    const taskdiv = taskCard.querySelector(".task")
+    if (task.isComplete) {
+      checkmark.innerHTML=`<div class = "checkmark"></div>`;
+      const check = document.createElement("div");
+      check.classList.add("completed");
+      taskdiv.appendChild(check);
 
-    const prova = taskCard.querySelector(".task");
+    }
+
+
+    
 
     const editbtn = new Image();
     const removebtn = new Image();
@@ -163,9 +194,10 @@ class DisplayManager {
     editbtn.src = editicon;
     removebtn.src = deleteicon;
 
+    checkmark.addEventListener("click", () => this.checkTask(task));
     removebtn.addEventListener("click", () => this.removeTask(task));
     editbtn.addEventListener("click", () => this.callDialogEditTask(task));
-    prova.addEventListener("click", () => this.expandTask(task));
+    taskdiv.addEventListener("click", () => this.expandTask(task));
 
     const editremovecontrols = taskCard.querySelector(".editremove");
 
@@ -256,9 +288,14 @@ class DisplayManager {
         homeList.id = "taskslist";
 
         const homeallTasks = this.user.getAllTasks();
+
+
         if (!this.getActiveTask()){
           this.setActiveTask(homeallTasks[0]);
         }
+
+        
+
         homeallTasks.forEach((tsk) => {
           homeList.appendChild(this.createTaskCard(tsk));
         });

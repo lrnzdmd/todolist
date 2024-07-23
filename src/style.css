@@ -225,6 +225,9 @@ body {
     transform: translateY(-13px);
 }
 .check {
+    display:flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     align-self: center;
     width:1.4rem;
@@ -232,6 +235,16 @@ body {
     background-color: rgb(19, 73, 126);
     border-radius: 50%;
     border:2px solid azure;
+}
+
+.checkmark {
+    cursor: pointer;
+    align-self: center;
+    width:0.9rem;
+    height:0.9rem;
+    background-color: rgb(126, 19, 19);
+    border-radius: 50%;
+    border:2px solid rgb(255, 245, 240);
 }
 
 .task {
@@ -268,4 +281,12 @@ body {
 
 .editremove {
     align-self: flex-end;
+}
+
+#notes {
+    white-space: pre-wrap;
+}
+
+.task:has(.completed) {
+    background-color: rgb(105, 105, 105);
 }

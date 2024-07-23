@@ -6,7 +6,6 @@ export default class User {
         this.projectList = projectList.length ? projectList : [new Project()];
         this.maxLengthName = 20;
 
-        this.removeProject = this.removeProject.bind(this);
     }
 
     getName() {
