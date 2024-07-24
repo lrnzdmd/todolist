@@ -38,12 +38,19 @@ class DisplayManager {
     const editprojectform = document.getElementById("editprojectform");
     const edittaskform = document.getElementById("edittaskform");
     const cleandonetasksbtn = document.getElementById("cleandonetasksbtn");
-    
 
-    cleandonetasksbtn.addEventListener("click", () => this.cleanDoneTasks(this.user));
-    cancelbtns.forEach(btn => btn.addEventListener("click", this.closeDialog));
-    editprojectform.addEventListener("submit", (event) => this.editProject(event, this.activeProject));
-    edittaskform.addEventListener("submit", (event) => this.editTask(event, this.activeTask));
+    cleandonetasksbtn.addEventListener("click", () =>
+      this.cleanDoneTasks(this.user)
+    );
+    cancelbtns.forEach((btn) =>
+      btn.addEventListener("click", this.closeDialog)
+    );
+    editprojectform.addEventListener("submit", (event) =>
+      this.editProject(event, this.activeProject)
+    );
+    edittaskform.addEventListener("submit", (event) =>
+      this.editTask(event, this.activeTask)
+    );
     homebtn.addEventListener("click", () => this.loadHome(this.user));
     settingsbtn.addEventListener("click", () => this.loadSettings(this.user));
     addprojectbtn.addEventListener("click", () => this.addProject(this.user));
@@ -63,7 +70,6 @@ class DisplayManager {
   loadDueToday() {
     this.setActiveProject("duetoday");
     this.refreshPage();
-
   }
 
   loadSettings() {
@@ -98,19 +104,26 @@ class DisplayManager {
   }
 
   addTask() {
-       const index = this.user.projectList.findIndex(proj => (proj.getProjectId() === this.activeProject.getProjectId()));
-       user.getProjectList()[index].addTask({projectId: this.activeProject.getProjectId()});
-       this.refreshPage();
+    const index = this.user.projectList.findIndex(
+      (proj) => proj.getProjectId() === this.activeProject.getProjectId()
+    );
+    user
+      .getProjectList()
+      [index].addTask({ projectId: this.activeProject.getProjectId() });
+    this.refreshPage();
   }
 
   removeTask(task) {
-    
-    const index = this.user.getProjectList().findIndex(proj => proj.getTaskList().some(tsk => tsk.taskId === task.taskId));
+    const index = this.user
+      .getProjectList()
+      .findIndex((proj) =>
+        proj.getTaskList().some((tsk) => tsk.taskId === task.taskId)
+      );
     this.user.getProjectList()[index].removeTask(task);
     this.refreshPage();
   }
 
-  callDialogEditTask(task){
+  callDialogEditTask(task) {
     this.activeTask = task;
     const editTaskDialog = document.getElementById("edittask");
     const editnotebox = document.getElementById("notes");
@@ -126,7 +139,7 @@ class DisplayManager {
     task.setDescription(formData.description);
     task.setPriority(formData.priority);
     task.setDueDate(new Date(formData.duedate));
-    task.getNoteList()[0] = formData.notes.replace(/\n/g, '<br>');
+    task.getNoteList()[0] = formData.notes.replace(/\n/g, "<br>");
     console.log(formData.notes);
     edittaskform.reset();
     this.closeDialog(event);
@@ -144,7 +157,7 @@ class DisplayManager {
   }
 
   cleanDoneTasks(user) {
-    user.getProjectList().forEach(project => project.clearCompleteTasks());
+    user.getProjectList().forEach((project) => project.clearCompleteTasks());
     this.refreshPage();
   }
 
@@ -167,26 +180,20 @@ class DisplayManager {
         " ";
     }
 
-    
-
-    if (task.getTaskId() === this.activeTask.getTaskId()){
-      task.getNoteList().forEach(note => {
+    if (task.getTaskId() === this.activeTask.getTaskId()) {
+      task.getNoteList().forEach((note) => {
         const n = document.createElement("span");
         n.innerHTML = note;
         taskCard.querySelector("#notelist").appendChild(n);
       });
     }
-    const taskdiv = taskCard.querySelector(".task")
+    const taskdiv = taskCard.querySelector(".task");
     if (task.isComplete) {
-      checkmark.innerHTML=`<div class = "checkmark"></div>`;
+      checkmark.innerHTML = `<div class = "checkmark"></div>`;
       const check = document.createElement("div");
       check.classList.add("completed");
       taskdiv.appendChild(check);
-
     }
-
-
-    
 
     const editbtn = new Image();
     const removebtn = new Image();
@@ -203,7 +210,6 @@ class DisplayManager {
 
     editremovecontrols.appendChild(editbtn);
     editremovecontrols.appendChild(removebtn);
-    
 
     return taskCard;
   }
@@ -230,7 +236,9 @@ class DisplayManager {
     deleteIconImg.alt = "deleteicon";
 
     removeBtnDiv.addEventListener("click", () => this.removeProject(project));
-    editBtnDiv.addEventListener("click", () => this.callDialogEditProject(project));
+    editBtnDiv.addEventListener("click", () =>
+      this.callDialogEditProject(project)
+    );
     projectNameP.addEventListener("click", () => this.loadProject(project));
 
     editBtnDiv.appendChild(editIconImg);
@@ -248,8 +256,14 @@ class DisplayManager {
     const userName = document.getElementById("username");
     const tasksDueToday = document.getElementById("tasksduetoday");
 
-    projTitle.textContent = (this.activeProject === "home"||this.activeProject === "duetoday") ? "Home" : this.activeProject.getTitle();
-    projDescription.textContent = (this.activeProject === "home"||this.activeProject === "duetoday") ? "Let's get to it!" : this.activeProject.getDescription(); 
+    projTitle.textContent =
+      this.activeProject === "home" || this.activeProject === "duetoday"
+        ? "Home"
+        : this.activeProject.getTitle();
+    projDescription.textContent =
+      this.activeProject === "home" || this.activeProject === "duetoday"
+        ? "Let's get to it!"
+        : this.activeProject.getDescription();
     userName.textContent = user.getName();
     tasksDueToday.textContent = user.getTasksDueToday().length;
   }
@@ -281,7 +295,6 @@ class DisplayManager {
 
     switch (this.activeProject) {
       case "home":
-        
         console.log("refresh switched on home");
 
         const homeList = document.createElement("div");
@@ -289,12 +302,9 @@ class DisplayManager {
 
         const homeallTasks = this.user.getAllTasks();
 
-
-        if (!this.getActiveTask()){
+        if (!this.getActiveTask()) {
           this.setActiveTask(homeallTasks[0]);
         }
-
-        
 
         homeallTasks.forEach((tsk) => {
           homeList.appendChild(this.createTaskCard(tsk));
@@ -303,25 +313,25 @@ class DisplayManager {
         content.appendChild(homeList);
 
         break;
-    
-        case "duetoday":
-            console.log("refresh switched on duetoday");
 
-            const duetodayList = document.createElement("div");
-            duetodayList.id = "taskslist";
+      case "duetoday":
+        console.log("refresh switched on duetoday");
 
-            const duetodayTasks = this.user.getTasksDueToday();
-            if (!this.getActiveTask()){
-              this.setActiveTask(duetodayTasks[0]);
-            }
-            duetodayTasks.forEach((tsk) => {
-                duetodayList.appendChild(this.createTaskCard(tsk));
-            });
-            content.appendChild(duetodayList);
+        const duetodayList = document.createElement("div");
+        duetodayList.id = "taskslist";
+
+        const duetodayTasks = this.user.getTasksDueToday();
+        if (!this.getActiveTask()) {
+          this.setActiveTask(duetodayTasks[0]);
+        }
+        duetodayTasks.forEach((tsk) => {
+          duetodayList.appendChild(this.createTaskCard(tsk));
+        });
+        content.appendChild(duetodayList);
         break;
 
       default:
-        if (!this.getActiveTask()){
+        if (!this.getActiveTask()) {
           this.setActiveTask(this.getActiveProject().getTaskList()[0]);
         }
         const projectList = document.createElement("div");
@@ -329,7 +339,7 @@ class DisplayManager {
         this.activeProject.getTaskList().forEach((tsk) => {
           projectList.appendChild(this.createTaskCard(tsk));
         });
-        
+
         const addtaskbtn = document.createElement("div");
         addtaskbtn.id = "addtaskbtn";
         addtaskbtn.classList.add("plusbtn");
@@ -338,7 +348,6 @@ class DisplayManager {
         addtaskbtn.addEventListener("click", () => this.addTask(this.user));
 
         content.appendChild(projectList);
-        
     }
   }
 
@@ -346,7 +355,6 @@ class DisplayManager {
     this.refreshContent();
     this.refreshHeader();
     this.refreshSidebar();
-
   }
 
   closeDialog(event) {
@@ -361,4 +369,3 @@ setInterval(saveUserData, 5000, display.user);
 display.addStaticElementsListeners();
 
 display.loadHome();
-
