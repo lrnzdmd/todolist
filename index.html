@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+<script defer src="bundle.js"></script></head>
+<body>
+    <div class="logo" id="homebtn">
+    </div>
+    <div class="header">
+        <div class="projname">
+            <h2 id="hprojecttitle">Home</h2>
+            <p id="hprojectdescr">Let's get to it!</p>
+        </div>
+        <div class="tasksduetoday">
+            <p>Hello, <b id="username">User</b></p>
+            <p id="duetodaybtn"><b id="tasksduetoday">11</b> Tasks due today!</p>
+        </div>
+    </div>
+    <div class="sidebar">
+        <p class="plusbtnwhite" id="addprojectbtn"><b>+</b></p>   
+        <div class="projects" id="projectslist">
+            
+        </div>
+        <div class="settings" id="settingsbtn">
+            <p>SETTINGS</p>
+        </div>
+        <div class="settings" id="cleandonetasksbtn">
+            <p>CLEAN DONE TASKS</p>
+        </div>
+    </div>
+    <div class="content" id="content">
+        <div id="taskslist">
+            
+            <div class="plusbtn" id="addtaskbtn"><p>+</p></div>
+        </div>
+    </div>
+    <dialog id="removeconfirmation">
+        
+    </dialog>
+    <dialog id="editproject">
+            <form action="editProject" method="dialog" id="editprojectform">
+                <div class="formfield">
+                    <label for="title">Project Title</label>
+                    <input type="text" name="title" id="title" required>
+                </div>
+                <div class="formfield">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" required>
+                </div>
+                <div class="buttons">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit">Confirm</button>
+                </div>
+            </form>
+    </dialog>
+    <dialog id="edittask">
+        <form action="edittask" method="dialog" id="edittaskform">
+            <div class="formfield">
+                <label for="title">Task Title</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+            <div class="formfield">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" required>
+            </div>
+            <div class="formfield">
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority">
+                    <option value="High">High</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+            <div class="formfield">
+                <label for="duedate">Due Date</label>
+                <input type="date" id="duedate" name="duedate">
+            </div>
+            <div class="formfield">
+                <label for="notes">Notes</label>
+                <textarea name="notes" id="notes"></textarea>
+            </div>
+            <div class="buttons">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit">Confirm</button>
+            </div>
+        </form>
+</dialog>
+    <template id="taskcardtemplate">
+        <div class="task">
+            <div class="flexcontainer">
+            <div style="display: flex; gap:1rem;">
+                <div class="check"></div>
+                <div class="taskname">
+                    <p><b></b></p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="priorityduedate">
+                <p>Priority: <b></b></p>
+                <p>Due: <b></b></p>
+            </div>
+            </div>
+            <div class="expandedtask">
+                <div id="notelist">
+
+                </div>
+                <div class="editremove">
+                    
+                </div>      
+            </div>
+        </div>
+    </template>
+</body>
+</html>
