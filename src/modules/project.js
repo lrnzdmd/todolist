@@ -55,7 +55,7 @@ export default class Project {
         this.taskList.forEach(task => {
             const taskDueDate = new Date(task.dueDate);
     
-            if (isValid(taskDueDate) && format(today, "yyyy-MM-dd") === format(taskDueDate, "yyyy-MM-dd")) {
+            if (isValid(taskDueDate) && format(today, "yyyy-MM-dd") === format(taskDueDate, "yyyy-MM-dd") && !task.isComplete) {
                 tasksDueToday.push(task);
             }
         });

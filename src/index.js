@@ -1,4 +1,5 @@
 import { saveUserData, loadUserData } from "./modules/storage.js";
+import { format } from "date-fns";
 import Task from "./modules/task.js";
 import Project from "./modules/project.js";
 import User from "./modules/user.js";
@@ -39,6 +40,19 @@ class DisplayManager {
     const edittaskform = document.getElementById("edittaskform");
     const cleandonetasksbtn = document.getElementById("cleandonetasksbtn");
 
+
+    const editTaskDialog = document.getElementById("edittask");
+    const edittitlebox = document.getElementById("title");
+    const editdescribox = document.getElementById("description");
+    const editpriobox = document.getElementById("priority");
+    const editnotebox = document.getElementById("notes");
+
+    const today = format(new Date(), "yyyy-MM-dd");
+    const editdatebox = document.getElementById("duedate");
+    editdatebox.setAttribute("min", today);
+    
+    
+
     cleandonetasksbtn.addEventListener("click", () =>
       this.cleanDoneTasks(this.user)
     );
@@ -78,7 +92,7 @@ class DisplayManager {
 
   addProject() {
     this.user.addProject({});
-    this.refreshPage();
+   this.callDialogEditProject(this.user.getProjectList()[this.user.getProjectList().length - 1]);
   }
 
   removeProject(project) {
@@ -107,9 +121,10 @@ class DisplayManager {
     const index = this.user.projectList.findIndex(
       (proj) => proj.getProjectId() === this.activeProject.getProjectId()
     );
-    user
+    this.user
       .getProjectList()
       [index].addTask({ projectId: this.activeProject.getProjectId() });
+    this.callDialogEditTask(this.user.getProjectList()[index].getTaskList()[this.user.getProjectList()[index].getTaskList().length - 1]);
     this.refreshPage();
   }
 
@@ -125,6 +140,7 @@ class DisplayManager {
 
   callDialogEditTask(task) {
     this.activeTask = task;
+
     const editTaskDialog = document.getElementById("edittask");
     const editnotebox = document.getElementById("notes");
     editnotebox.textContent = task.getNoteList()[0];
